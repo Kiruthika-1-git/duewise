@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #20223a;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.app { min-height: 100vh; }
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 245px;
+  padding: 30px 20px;
+  background: #fff;
+  border-right: 1px solid #ececf3;
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  font: 800 25px 'Manrope', sans-serif;
+  letter-spacing: -1px;
+  margin: 0 0 48px 8px;
+}
+.brand span { color: #7062e8; }
+.nav-label, .eyebrow {
+  color: #8c8da4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.nav-label { margin: 0 0 14px 10px; }
+.nav-item {
+  color: #777990;
+  padding: 13px 12px;
+  border-radius: 9px;
+  margin: 3px 0;
+  font-size: 14px;
+}
+.nav-item.active { background: #f0eeff; color: #6857dc; font-weight: 700; }
+.sidebar-bottom {
+  margin-top: auto;
+  border-top: 1px solid #eeeef4;
+  padding: 22px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 12px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #eae7ff;
+  color: #6756d8;
+  font-weight: 700;
+}
+.sidebar-bottom small, .bill-name small {
+  display: block;
+  color: #9091a5;
+  margin-top: 5px;
+}
+.content { margin-left: 245px; }
+.topbar {
+  height: 72px;
+  padding: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ededf4;
+  background: #fff;
+  color: #85869b;
+  font-size: 12px;
+}
+.today { color: #5b9c7b; }
+.page { max-width: 1250px; padding: 42px; margin: auto; }
+.welcome { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.eyebrow { margin: 0 0 10px; }
+h1, h2, p { margin-top: 0; }
+h1 { font: 800 30px 'Manrope', sans-serif; letter-spacing: -1px; margin-bottom: 8px; }
+h2 { font-family: 'Manrope', sans-serif; }
+.muted { color: #9091a5; font-size: 13px; margin-bottom: 0; }
+.primary {
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 19px;
+  background: #7062e8;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 5px 12px #7062e825;
+}
+.primary:hover { background: #5c4bd2; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 34px 0; }
+.stat-card {
+  background: #fff;
+  padding: 24px;
+  border: 1px solid #eeeef5;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px #24264a05;
+}
+.stat-top { display: flex; justify-content: space-between; align-items: center; color: #777990; font-size: 13px; }
+.stat-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 10px; font-weight: 700; }
+.purple { background: #efedff; color: #7160e6; }
+.orange { background: #fff1e5; color: #db8a42; }
+.green { background: #e5f7ee; color: #399c6c; }
+.stat-card h2 { font-size: 27px; margin: 18px 0 7px; letter-spacing: -1px; }
+.bills-section { background: white; border: 1px solid #eeeef5; border-radius: 14px; overflow: hidden; }
+.section-heading { padding: 25px 25px 22px; display: flex; justify-content: space-between; align-items: center; }
+.section-heading h2 { font-size: 17px; margin-bottom: 6px; }
+.count { background: #f2f1ff; color: #7062e8; padding: 7px 10px; border-radius: 7px; font-size: 11px; }
+.bill-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 25px;
+  border-top: 1px solid #f0f0f5;
+  font-size: 13px;
+}
+.table-head { color: #9293a6; font-size: 10px; letter-spacing: .7px; font-weight: 700; background: #fcfcfe; }
+.bill-name { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.bill-name strong { font-size: 12px; }
+.bill-name small { font-size: 11px; }
+.bill-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: #f1efff; color: #7566df; }
+.date { color: #777990; font-size: 12px; }
+.status { justify-self: start; border: 0; border-radius: 7px; padding: 8px 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.pending { color: #bf7a29; background: #fff4e6; }
+.paid { color: #33875f; background: #e7f7ee; }
+.bill-form {
+  margin-top: 24px;
+  padding: 24px;
+  background: white;
+  border: 1px solid #eeeef5;
+  border-radius: 14px;
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.bill-form h2 { flex-basis: 100%; font-size: 17px; margin-bottom: 2px; }
+.bill-form label { flex: 1; min-width: 150px; color: #777990; font-size: 12px; }
+.bill-form input { display: block; width: 100%; margin-top: 8px; padding: 11px; border: 1px solid #dedee9; border-radius: 8px; color: #20223a; }
+.footer-note { text-align: center; color: #a2a3b5; font-size: 11px; margin: 26px 0 0; }
+
+@media (max-width: 900px) {
+  .sidebar { width: 190px; padding: 24px 14px; }
+  .content { margin-left: 190px; }
+  .page { padding: 28px 20px; }
+  .topbar { padding: 0 20px; }
+  .stats { gap: 10px; }
+  .stat-card { padding: 17px; }
+  .bill-row { grid-template-columns: 1.5fr 1fr 1fr; padding: 15px; }
+  .bill-row > :nth-child(2) { display: none; }
+  .table-head > :nth-child(2) { display: none; }
+}
+@media (max-width: 600px) {
+  .sidebar { position: static; width: 100%; height: auto; padding: 15px; }
+  .brand { margin: 0 0 14px; }
+  .nav-label, .sidebar-bottom { display: none; }
+  .sidebar { flex-direction: row; align-items: center; gap: 6px; }
+  .nav-item { padding: 9px; font-size: 11px; }
+  .content { margin-left: 0; }
+  .topbar { height: 48px; font-size: 10px; }
+  .page { padding: 24px 14px; }
+  .welcome { align-items: flex-start; }
+  h1 { font-size: 24px; }
+  .welcome .primary { padding: 10px; white-space: nowrap; }
+  .stats { grid-template-columns: 1fr; margin: 24px 0; }
+  .stat-card { padding: 18px; }
+  .bill-row { grid-template-columns: 1.5fr 1fr; gap: 8px; padding: 13px 10px; font-size: 11px; }
+  .bill-row > :nth-child(3) { display: none; }
+  .table-head > :nth-child(3) { display: none; }
+  .section-heading { padding: 18px 12px; }
+}
